@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="Bars.css">
+<header class="header" id="header">
+    <div class="logo">     <a href="site.html"> <img src="SVSULOGO.png"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+       <a href="savedItems.html">      Saved </a>
+        <a href="About me.html">          Profile</a></li>
+      </ul>
+    </nav>
+
+
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw&callback=initMap&v=weekly"
+    defer
+  ></script>
+
+
+
+
+  </header>
+
+<title>Cardinal Spots - Bars</title>
+
+    
+    
+
+  <body>
+
+  
+    <div class="photo">
+   
+        <img src="Bars header.png">
+        <div class="centeredtext">
+        <h1>Bars</h1>
+        
+        </div>
+        
+
+
+
+    <div class="grid-container" >
+
+      <div class="grid-item" data-id="1">
+        <img src="Pierce.png">
+        <img src="Pierce2.jpg">
+
+      <div class="text">
+        <h1><u>Pierce Road Bar  & Grill</u></h1>
+      </div>
+      <div class="text">
+            <h3>2903 Pierce Rd, Saginaw, MI 48604</h3>
+            <h3>Average price per person $10-20</h3>
+            <h3><a href="https://www.pierceroadbng.com/"> Pierce Road Bar & Grill</a></h3>
+
+      <button class="bookmark-btn"></button>
+
+    </div>
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Buffalo Wild Wings.jpg">
+        <img src="Buffalo Wild Wings2.jpg">
+      
+
+
+      <div class="text">
+        <h1><u>Buffalo Wild Wings</u></h1>
+    </div>
+        <div class="text">
+            <h3>2690 Tittabawassee Rd, Saginaw, MI 48604</h3>
+            <h3>Average price per person $10-20</h3>
+            <h3><a href="https://www.buffalowildwings.com/locations/us/mi/saginaw/2690-tittabawasee-road/sports-bar-1054/"> Buffalo Wild Wings</a> </h3>
+
+
+      <button class="bookmark-btn"></button>
+    </div>
+      
+    </div>
+
+    
+
+
+    <div class="grid-item">
+        <img src="jakesbar.jpg">
+        <img src="Jakesbar2.JPG">
+
+      <div class="text">
+        <h1><u>Jakes Corner Lounge</u></h1>
+      </div>
+      <div class="text">
+        <h3>114 3rd St, Bay City, MI 48708</h3>
+        <h3>Average price per person $10-20</h3>
+        <h3><a href="https://jakescornerlounge.com/">Jakes Corner Lounge</a></h3>
+
+      <button class="bookmark-btn"></button>
+
+    </div>
+
+    </div>
+
+
+    <div class="grid-item">
+        <img src="Hecksbar.jpg">
+        <img src="Hecksbar2.jpg">
+
+      <div class="text">
+        <h1><u>Hecks Bar Carrollton</u></h1>
+      </div>
+      <div class="text">
+        <h3>555 Shattuck Rd, Saginaw, MI 48604</h3>
+        <h3>Average price per person $10-20</h3>
+        <h3><a href="https://www.facebook.com/hecksbar?refsrc=http%3A%2F%2Fwww.google.com%2F&_rdr">Hecks bar Carrollton</a></h3>
+
+      <button class="bookmark-btn"></button>
+
+    </div>
+
+    </div>
+
+
+    <div class="grid-item">
+        <img src="The Drift.jpg">
+        <img src="drift2.jpg">
+
+
+        <div class="text">
+            <h1><u>Drift Shoreside Beer Garden
+            </u></h1>
+        </div>
+    <div class="text">
+            <h3>1019 N Water St, Bay City, MI 48708</h3>
+            <h3>Average price per person $10-20</h3>
+
+            <h3><a href="https://www.driftbaycity.com/">Drift Bar</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+        </div>
+        </div>
+         <div class="grid-item">
+            <img src="Luckys.jpg">
+            <img src="Luckys2.jpg">
+
+            <div class="text">
+                <h1><u>Luckys Pub & Grill</u></h1>
+
+            </div>
+
+            <div class="text">
+                <h3>615 E Midland St, Bay City, MI 48706</h3>
+                <h3>Average price per person $10-20</h3>
+
+                <h3><a href="https://luckysbar.com/"> Luckys Bar</a></h3>
+
+                <button class="bookmark-btn"></button>
+
+
+            </div>
+
+
+         </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    /*
+   // Add click event listeners to bookmark buttons
+   document.querySelectorAll('.bookmark-btn').forEach(button => {
+          button.addEventListener('click', function() {
+              this.classList.toggle('bookmarked');
+
+              if (this.classList.contains('bookmarked')) {
+                  // Save the item if bookmarked
+                  saveItem(this.parentElement);
+              } else {
+                  // Unsave the item if unbookmarked
+                  unsaveItem(this.parentElement);
+              }
+          });
+      });
+
+      function saveItem(item) {
+          console.log('Item bookmarked:', item);
+          // Add your saving logic here (e.g., add to local storage)
+      }
+
+      function unsaveItem(item) {
+          console.log('Item unbookmarked:', item);
+          // Add your unsaving logic here (e.g., remove from local storage)
+      }
+      */
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+          const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+
+          document.querySelectorAll('.grid-item').forEach(item => {
+              const button = item.querySelector('.bookmark-btn');
+              const itemId = item.getAttribute('data-id');
+
+              if (savedItems.includes(itemId)) {
+                  button.classList.add('bookmarked');
+              }
+
+              button.addEventListener('click', function() {
+                  this.classList.toggle('bookmarked');
+                  if (this.classList.contains('bookmarked')) {
+                      saveItem(itemId, item);
+                  } else {
+                      unsaveItem(itemId);
+                  }
+              });
+          });
+
+          function saveItem(itemId, item) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              if (!savedItems.includes(itemId)) {
+                  savedItems.push(itemId);
+                  localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                  localStorage.setItem(`savedItem-${itemId}`, item.innerHTML);
+              }
+          }
+
+          function unsaveItem(itemId) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              savedItems = savedItems.filter(id => id !== itemId);
+              localStorage.setItem('savedItems', JSON.stringify(savedItems));
+              localStorage.removeItem(`savedItem-${itemId}`);
+          }
+      });
+</script>
+
+
+
+<div id="map"></div>
+<script src="map2.js"></script>
+
+<!-- prettier-ignore -->
+<script>
+  (function(g) {
+      var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+          await (a = m.createElement("script"));
+          e.set("libraries", [...r] + "");
+          for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+          e.set("callback", c + ".maps." + q);
+          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+          d[q] = f;
+          a.onerror = () => h = n(Error(p + " could not load."));
+          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+          m.head.append(a);
+      }));
+      d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+  })({
+      key: "AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw",
+      v: "weekly"
+  });
+
+  function initMap() {
+// Saginaw Valley State University coordinates
+const svsu = { lat: 43.5140, lng: -83.9630 };
+
+const piercebar = {lat: 43.50838487459169, lng: -83.9715199755246}
+
+const BWW = {lat: 43.48078073971987, lng: -83.96725598366604}
+
+const Jakes = {lat: 43.60108940374499, lng: -83.88735924073431}
+
+const Hecks = {lat: 43.45081782406016, lng: -83.94801638989186}
+
+const Drift = {lat: 43.60114458120874, lng: -83.88905347696448}
+
+const Luckys = {lat: 43.60233152494869, lng: -83.89848040949734}
+// Create a map centered at SVSU
+const map = new google.maps.Map(document.getElementById("map"), {
+zoom: 11,
+center: svsu,
+});
+
+// Optionally, add a marker at SVSU
+const marker = new google.maps.Marker({
+position: svsu,
+map: map,
+
+});
+
+const marker2 = new google.maps.Marker({
+position: piercebar,
+map: map,
+title: 'piercebar&grill' 
+});
+
+const marker3 = new google.maps.Marker({
+position: BWW,
+map: map,
+title: 'Buffallo Wild Wings' 
+});
+
+const marker4 = new google.maps.Marker({
+position: Jakes,
+map: map,
+title: 'Jakes Corner Lounge & Bar' 
+});
+
+const marker5 = new google.maps.Marker({
+position: Jakes,
+map: map,
+title: 'Jakes Corner Lounge & Bar' 
+});
+
+
+const marker6 = new google.maps.Marker({
+position: Hecks,
+map: map,
+title: 'Hecks bar Carrollton' 
+});
+
+const marker7 = new google.maps.Marker({
+position: Drift,
+map: map,
+title: 'Drift Shoreside Beer Garden' 
+});
+
+const marker8 = new google.maps.Marker({
+position: Luckys,
+map: map,
+title: 'Luckys Pub & Grill' 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+  window.initMap = initMap;
+    
+  </script>
+
+
+
+
+
+
+
+
+<footer class="footer hidden" id="footer">
+  <h3>Cardinal Spots</h3>
+  <h3><a href="https://www.svsu.edu/">SVSU Mainpage</a></h3>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+      const footer = document.getElementById('footer');
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50) {
+          footer.classList.remove('hidden');
+      } else {
+          footer.classList.add('hidden');
+      }
+  });
+</script>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

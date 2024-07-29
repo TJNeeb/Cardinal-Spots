@@ -1,0 +1,453 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, #79a4bd);
+    padding-bottom: 500px;
+   /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+
+
+  }
+  
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #333;
+    color: rgb(78, 123, 206);
+    padding: 18px;
+    word-spacing: 0.5em;
+    transition: background-color 0.3s ease-out;
+    z-index: 1000;
+  }
+  
+  
+  .logo img {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    padding-left: 10px;
+    padding-top: -10px;
+  }
+  
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    padding: 16px 32px;
+  }
+  
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 88%;
+    padding-top: 20px;
+    padding-bottom: 70px;
+  }
+  
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+  }
+  
+  
+  nav ul li a:hover {
+    text-decoration: line-through;
+  }
+  
+  
+
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+}
+
+
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-controls .prev,
+.carousel-controls .next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+
+
+.Under {
+width: 100%;
+height: 30px;
+background-color: rgba(255, 255, 255, 0.6);
+margin-top: -10px;
+padding-top: 5px;
+padding-bottom: 15px;
+align-items: center;
+text-align: center;
+
+}
+
+.Under h3{
+  text-align: center;
+padding-top: -45px;
+color:#616060;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  .centeredtext {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    padding: 16px 32px;
+    border-radius: 12px;
+}
+
+
+
+.photo h3{
+background: white;
+color: black;
+font-size: 18px;
+padding: 16px 32px;
+    text-align: center;
+
+
+
+
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-gap: 4px;
+    padding: 20px;
+    grid-gap: 9px;
+}
+
+.grid-item {
+    text-align: center;
+    margin-top: 140px;
+    padding-top: 10px;
+    border-radius: 12px;
+
+}
+
+.grid-item img{
+  border-radius: 12px;
+  box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.4);
+
+
+
+
+}
+
+
+/*
+.grid-container div:nth-child(4), .grid-container div:nth-child(5), .grid-container div:nth-child(6){
+    padding-top: 10px;
+    margin-top: 100px;
+    grid-gap:6px;
+    transform: scale(0.9);
+
+}
+*/
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+      border-radius: 12px;
+
+}
+
+
+.fill a {
+display: inline-block;
+}
+
+
+.fill img {
+flex-shrink: 0;
+width: auto;
+height: auto;
+transition: opacity 0.3s ease;
+transform: scale(1.0);
+
+
+object-fit: cover;
+transition: transform 0.3s ease-in-out;
+
+
+}
+
+
+.fill img:hover {
+opacity: 0.7; /* Decrease opacity to dim the image */
+
+
+transform: scale(1.1);
+
+
+
+}
+
+
+.fill a h1{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+
+
+.fill h1 {
+color: white;
+position: absolute;
+text-align:center;
+z-index: 5;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+background-color: rgb(81, 81, 211);
+color: white;
+font-size: 20px;
+padding: 16px 32px;
+transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition effect for font size and color */
+border-radius: 6px;
+
+
+
+
+
+}
+
+
+.fill h1:hover {
+color: #616060; /* Change text color on hover */
+cursor: pointer; /* Change cursor to pointer */
+
+
+}
+
+
+
+
+
+
+
+/*end of slider*/
+
+
+
+.footer{
+ width:100%;
+ height: 100px; 
+ margin-top: 600px;
+ margin-bottom: -490px;
+background-color: rgb(7, 7, 78);
+opacity: 1;
+transition: opacity 0.5s ease;
+}
+.footer.hidden {
+opacity: 0;
+}
+
+.footer h3{
+  padding-top: 10px;
+  color: white;
+  
+text-align:center;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  color: white; /* Set the default color to white */
+  text-decoration: none; /* Remove underline (optional) */
+}
+
+a:visited {
+  color: white; /* Keep the color white for visited links */
+}
+
+a:hover {
+  color: rgb(177, 74, 74); /* Keep the color white when hovered */
+}
+
+a:active {
+  color:  rgb(177, 74, 74); /* Keep the color white when the link is clicked */
+
+}
+
+
+
+
+
+/* Mobile styles (up to 414px) */
+@media screen and (max-width: 414px) {
+  nav ul li {
+      padding-left: 0;
+      text-align: center;
+      display: block;
+      margin: 0;
+  }
+
+  nav ul li a {
+      font-size: 18px;
+      display: block;
+      margin: 5px 0;
+  }
+
+  .centeredtext {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+      margin-top: 20px;
+  }
+}
+
+/* Tablet styles (601px to 1280px) */
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  nav ul li {
+      padding-left: 0;
+      text-align: center;
+  }
+
+  nav ul li a {
+      font-size: 20px;
+  }
+
+  .centeredtext {
+      font-size: 20px;
+      padding: 12px 24px;
+  }
+
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item {
+      margin-top: 40px;
+  }
+}
+
+/* Desktop styles (1280px and up) */
+@media screen and (min-width: 1280px) {
+  nav ul li {
+      padding-left: 88%;
+  }
+
+  nav ul li a {
+      font-size: 26px;
+  }
+
+  .centeredtext {
+      font-size: 24px;
+      padding: 16px 32px;
+  }
+
+  .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-item {
+      margin-top: 140px;
+  }
+}

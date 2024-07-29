@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="Art gallery.css">
+<header class="header" id="header">
+    <div class="logo">     <a href="site.html"> <img src="SVSULOGO.png"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+       <a href="savedItems.html">      Saved </a>
+        <a href="About me.html">          Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+<title>Cardinal Spots - Art Gallerys</title>
+
+
+
+
+ 
+
+
+
+<div class="photo">
+   
+<img src="Arts Gallerys header.png">
+<div class="centeredtext">
+<h1>Art Gallerys</h1>
+
+</div>
+
+
+
+<body>
+
+
+
+<div class="grid-container">
+
+    <div class="grid-item">
+        <img src="Saginaw Art Museum.jpg">
+        <img src="Saginaw+Exhibition+Wing+Interior.jpg">
+
+
+        <div class="text">
+            <h3><u>Saginaw Art Museum & Gardens</u></h3>
+        </div>
+
+<div class="text">
+    <h3>1126 N Michigan Ave, Saginaw, MI 48602</h3>
+    <h3>Hours: 12pm-5pm, Wednesday - Saturday</h3>
+    <h3><a href="https://www.saginawartmuseum.org/">Saginaw Art Museum & Gardens</a></h3>
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="grid-item">
+
+        <img src="marshall-m-fredericks.jpg">
+        <img src="marshall2.jpg">
+
+
+        <div class="text">
+            <h3><u>Marshall M. Fredericks Museum</u></h3>
+        </div>
+
+<div class="text">
+    <h3>7400 Bay Rd, University Center, MI 48710</h3>
+    <h3>On Campus</h3>
+    <h3>Hours: 11am - 5pm Monday - Saturday, Closed Sunday </h3>
+    <h3>Free Admission</h3>
+    <h3><a href="https://marshallfredericks.org/">Marshal M. Fredericks</a></h3>
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Studio23.png">
+        <img src="Studio23(2).jpg">
+
+
+        <div class="text">
+            <h1><u>Studio 23/The Arts Center
+            </u></h1>
+        </div>
+
+<div class="text">
+    <h3>901 N Water St, Bay City, MI 48708</h3>
+    <h3>Hours: 11am - 6pm Tuesday - Saturday</h3>
+    <h3>Closed Sunday & Monday</h3>
+    <h3><a href="https://www.studio23baycity.org/">Studio23/The Arts Center</a></h3>
+
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="grid-item">
+        <img src="The Building.JPG">
+        <img src="The Building2.jpg">
+
+
+        <div class="text">
+        <h3><u>THE BUILDING - Art Gallery & Workshops
+        </u></h3>
+        
+        </div>
+
+<div class="text">
+    <h3>2972 E Crosby Ct, Midland, MI 48640</h3>
+    <h3>Hours: Open Saturday 2pm-8pm</h3>
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Midland Center for the Arts.jpg">
+        <img src="Centerforthearts2.jpg">
+
+
+        <div class="text">
+
+
+            <h1><u>Midland Center for the Arts</u></h1>
+        </div>
+
+<div class="text">
+
+    <h3>1801 W St Andrews Rd, Midland, MI 48640</h3>
+    <h3>Hours: 12pm-6pm Monday - Thursday</h3>
+    <h3>10am - 6pm Friday</h3>
+    <h3>10am - 4pm Saturday</h3>
+    <h3>12pm - 4pm Sunday</h3>
+    <h3><a href="https://www.midlandcenter.org/">Center for the Arts</a></h3>
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="grid-item">
+
+
+
+        <div class="text">
+
+        </div>
+
+<div class="text">
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    /*
+   // Add click event listeners to bookmark buttons
+   document.querySelectorAll('.bookmark-btn').forEach(button => {
+          button.addEventListener('click', function() {
+              this.classList.toggle('bookmarked');
+
+              if (this.classList.contains('bookmarked')) {
+                  // Save the item if bookmarked
+                  saveItem(this.parentElement);
+              } else {
+                  // Unsave the item if unbookmarked
+                  unsaveItem(this.parentElement);
+              }
+          });
+      });
+
+      function saveItem(item) {
+          console.log('Item bookmarked:', item);
+          // Add your saving logic here (e.g., add to local storage)
+      }
+
+      function unsaveItem(item) {
+          console.log('Item unbookmarked:', item);
+          // Add your unsaving logic here (e.g., remove from local storage)
+      }
+      */
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+          const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+
+          document.querySelectorAll('.grid-item').forEach(item => {
+              const button = item.querySelector('.bookmark-btn');
+              const itemId = item.getAttribute('data-id');
+
+              if (savedItems.includes(itemId)) {
+                  button.classList.add('bookmarked');
+              }
+
+              button.addEventListener('click', function() {
+                  this.classList.toggle('bookmarked');
+                  if (this.classList.contains('bookmarked')) {
+                      saveItem(itemId, item);
+                  } else {
+                      unsaveItem(itemId);
+                  }
+              });
+          });
+
+          function saveItem(itemId, item) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              if (!savedItems.includes(itemId)) {
+                  savedItems.push(itemId);
+                  localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                  localStorage.setItem(`savedItem-${itemId}`, item.innerHTML);
+              }
+          }
+
+          function unsaveItem(itemId) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              savedItems = savedItems.filter(id => id !== itemId);
+              localStorage.setItem('savedItems', JSON.stringify(savedItems));
+              localStorage.removeItem(`savedItem-${itemId}`);
+          }
+      });
+</script>
+
+
+
+
+
+</body>

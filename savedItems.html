@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <div class="logo">      <a href="site.html"> <img src="SVSULOGO.png"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+       <a href="mainpage.html">      Saved </a>
+        <a href="About me.html">          Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+
+
+
+
+
+
+
+
+
+    <title>Saved Places</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, #b7b9b9);
+    padding-bottom: 100px;
+        }
+
+        header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #333;
+    color: rgb(78, 123, 206);
+    padding: 18px;
+    word-spacing: 0.5em;
+    transition: background-color 0.3s ease-out;
+    z-index: 1000;
+  }
+  
+  
+  .logo img {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    padding-left: 10px;
+    padding-top: -10px;
+  }
+  
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    padding: 16px 32px;
+  }
+  
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 88%;
+    padding-top: 20px;
+    padding-bottom: 70px;
+  }
+  
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+  }
+  
+  
+  nav ul li a:hover {
+    text-decoration: line-through;
+  }
+  
+  
+  .photo img {
+    
+    padding-top: 20px;
+    height: 55%;
+    width: auto;
+  }
+  
+  
+  .centeredtext {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    padding: 16px 32px;
+    border-radius: 12px;
+}
+
+
+
+        /*
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background: #f0f0f0;
+    width: 700px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 0; /* Remove padding to ensure image covers entire div 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 10px;
+    margin-top: 600px;
+align-items: center;
+margin-left: 200px;
+row-gap: 80px; /* This controls the gap between rows *
+column-gap: -300px;
+
+}
+*/
+.grid-container {
+    
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            padding: 10px;
+    margin-top: 200px;
+align-items: center;
+margin-left: 200px;
+row-gap: 80px; /* This controls the gap between rows */
+column-gap: -300px;
+
+
+            
+        }
+
+
+
+
+
+
+
+
+.grid-item {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+      
+
+    
+}
+
+
+.grid-item .h1, .grid-item .text {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                transition: transform 0.5s ease;
+                z-index: 3; /* Ensures the text is above the images */
+            }
+           
+
+
+
+
+
+
+
+
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+   
+
+
+
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.grid-item img:first-child {
+    z-index: 1;
+}
+.grid-item img:last-child {
+    transform: translateX(100%);
+    z-index: 2;
+}
+.grid-item:hover img:first-child {
+    transform: translateX(-100%);
+}
+.grid-item:hover img:last-child {
+    transform: translateX(0);
+}
+
+
+
+
+.grid-item .text:last-of-type {
+    transform: translateX(180%);
+}
+.grid-item:hover .text:first-of-type {
+    transform: translateX(-120%);
+}
+.grid-item:hover .text:last-of-type {
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #ccc;
+    font-size: 24px;
+}
+
+.bookmarked {
+    color: gold;
+}
+
+    </style>
+</head>
+<body>
+    
+
+
+
+
+
+
+    <div class="photo">
+   
+        <img src="Saved.jpg">
+        <div class="centeredtext">
+        <h1>Saved Spots</h1>
+        
+        </div>
+        
+        
+        
+
+
+        <div class="grid-container" id="savedGridContainer"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+                const savedGridContainer = document.getElementById('savedGridContainer');
+    
+                savedItems.forEach(itemId => {
+                    const itemHTML = localStorage.getItem(`savedItem-${itemId}`);
+                    if (itemHTML) {
+                        const item = document.createElement('div');
+                        item.className = 'grid-item';
+                        item.setAttribute('data-id', itemId);
+                        item.innerHTML = itemHTML;
+                        savedGridContainer.appendChild(item);
+                    }
+                });
+    
+                // Check if more than four items are present
+                console.log(`Total items loaded: ${savedItems.length}`);
+            });
+        </script>
+</body>
+</html>
+
+

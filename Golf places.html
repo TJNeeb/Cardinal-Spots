@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="Golf.css">
+<header class="header" id="header">
+    <div class="logo">     <a href="site.html"> <img src="SVSULOGO.png"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+       <a href="savedItems.html">      Saved </a>
+        <a href="About me.html">          Profile</a></li>
+      </ul>
+    </nav>
+
+
+
+
+</script>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw&callback=initMap&v=weekly"
+      defer
+    ></script>
+
+
+
+
+
+
+
+
+
+  </header>
+
+
+
+<title>Cardinal Spots - Golf Courses</title>
+
+
+
+
+ 
+
+<body>
+
+<div class="photo">
+   
+<img src="Golfheader.png">
+<div class="centeredtext">
+<h1>Golf Courses</h1>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="grid-container">
+
+    <div class="grid-item">
+            <img src="Swan Valley1.jpg">
+            <img src="Swan Valley2.jpg">
+
+        <div class="text">
+            <h1><u>Swan Valley Golf Course
+            </u></h1>
+        </div>
+        <div class="text">
+            <h3>9521 Highland Green Dr, Saginaw, MI 48609</h3>
+            <h3>Hours: Open 8am-10pm, Sunday - Saturday </h3>
+            <h3><a href="https://www.thecreekandthevalley.com/golf/swanvalley/svrates.php">Swan Valley</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+
+      <div class="grid-item">
+        <img src="Sawmill Golf Club1.jpg">
+        <img src="Sawmill Golf Club.jpg">
+        <div class="text">
+            <h1><u>Sawmill Golf Club</u></h1>
+        </div>
+        <div class="text">
+            <h3>19 Sawmill Blvd, Saginaw, MI 48603</h3>
+            <h3>Hours: Open 7am-10pm, Sunday - Saturday</h3>
+            <h3><a href="https://thesawmill.com/">Sawmill Golf Club</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+
+      <div class="grid-item">
+        <img src="Pleasantview1.png">
+        <img src="Pleasantview.jpg">
+        <div class="text">
+            <h1><u>Pleasant View Golf Course
+            </u></h1>
+        </div>
+        <div class="text">
+            <h3> 3424 Barnard Rd, Saginaw, MI 48603</h3>
+            <h3>Hours: 9am - 8:30pm, Sunday - Saturday</h3>
+            <h3><a href="https://pleasantviewgc.com/">Pleasant View Golf Course</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+
+      <div class="grid-item">
+        <img src="Twinoaks.jpeg">
+        <img src="Twinoaks.jpg">
+        <div class="text">
+            <h1><u>Twin Oaks Golf Course</u></h1>
+        </div>
+        <div class="text">
+            <h3>6710 Freeland Rd, Freeland, MI 48623</h3>
+            <h3>Hours: 7am - 10pm, Sunday -Saturday</h3>
+            <h3><a Href="https://twinoaksgolfclubfreeland.com/">Twin Oaks</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+      <div class="grid-item">
+        <img src="Sandy Ridge.jpg">
+        <img src="Sandy Ridge2.jpg">
+        <div class="text">
+            <h1><u>Sandy Ridge Golf Course</u></h1>
+        </div>
+        <div class="text">
+            <h3> 2750 Lauria Rd, Midland, MI 48642</h3>
+            <h3>Hours: 7am - 8pm, Sunday - Saturday</h3>
+            <h3><a href="https://golfsandyridge.com/">Sandy Ridge Golf Course</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+
+      <div class="grid-item">
+        <img src="Currie.jpg">
+        <img src="Currie2.jpg">
+        <div class="text">
+            <h1><u>Currie Golf Courses</u></h1>
+        </div>
+        <div class="text">
+            <h3>1300 Currie Pkwy, Midland, MI 48640</h3>
+            <h3>Hours: 6:30am - 6:30pm, Sunday - Saturday</h3>
+            <h3><a href="https://www.curriegolf.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb">Currie Golf Course</a></h3>
+
+        <button class="bookmark-btn"></button>
+
+      </div>
+
+      </div>
+
+
+    
+
+
+
+
+
+
+
+</div>
+
+
+
+
+ <script>
+      /*
+     // Add click event listeners to bookmark buttons
+     document.querySelectorAll('.bookmark-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('bookmarked');
+
+                if (this.classList.contains('bookmarked')) {
+                    // Save the item if bookmarked
+                    saveItem(this.parentElement);
+                } else {
+                    // Unsave the item if unbookmarked
+                    unsaveItem(this.parentElement);
+                }
+            });
+        });
+
+        function saveItem(item) {
+            console.log('Item bookmarked:', item);
+            // Add your saving logic here (e.g., add to local storage)
+        }
+
+        function unsaveItem(item) {
+            console.log('Item unbookmarked:', item);
+            // Add your unsaving logic here (e.g., remove from local storage)
+        }
+        */
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+
+            document.querySelectorAll('.grid-item').forEach(item => {
+                const button = item.querySelector('.bookmark-btn');
+                const itemId = item.getAttribute('data-id');
+
+                if (savedItems.includes(itemId)) {
+                    button.classList.add('bookmarked');
+                }
+
+                button.addEventListener('click', function() {
+                    this.classList.toggle('bookmarked');
+                    if (this.classList.contains('bookmarked')) {
+                        saveItem(itemId, item);
+                    } else {
+                        unsaveItem(itemId);
+                    }
+                });
+            });
+
+            function saveItem(itemId, item) {
+                let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+                if (!savedItems.includes(itemId)) {
+                    savedItems.push(itemId);
+                    localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                    localStorage.setItem(`savedItem-${itemId}`, item.innerHTML);
+                }
+            }
+
+            function unsaveItem(itemId) {
+                let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+                savedItems = savedItems.filter(id => id !== itemId);
+                localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                localStorage.removeItem(`savedItem-${itemId}`);
+            }
+        });
+  </script>
+
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+
+
+  <div id="map"></div>
+        <script src="map2.js"></script>
+  
+        <!-- prettier-ignore -->
+        <script>
+          (function(g) {
+              var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+              b = b[c] || (b[c] = {});
+              var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+                  await (a = m.createElement("script"));
+                  e.set("libraries", [...r] + "");
+                  for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                  e.set("callback", c + ".maps." + q);
+                  a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                  d[q] = f;
+                  a.onerror = () => h = n(Error(p + " could not load."));
+                  a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                  m.head.append(a);
+              }));
+              d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+          })({
+              key: "AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw",
+              v: "weekly"
+          });
+  
+          function initMap() {
+      // Saginaw Valley State University coordinates
+      const svsu = { lat: 43.5140, lng: -83.9630 };
+
+      const swanvalley = {lat: 43.424074592035396, lng: -84.10211188935942}
+
+      const sawmillgolfclub = {lat: 43.456184585035935, lng: -84.06510794702925}
+
+      const pleasantview = {lat: 43.457036739776825,lng: -83.96465721601926}
+
+      const twinoaks = {lat: 43.52503235915372, lng: -84.04639101079633}
+  
+      const sandyridge = {lat: 43.66182289421504, lng: -84.15871008010673}
+
+      const currie = {lat: 43.61681408566723, lng: -84.26227861134542}
+    
+      // Create a map centered at SVSU
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 11,
+        center: svsu,
+      });
+    
+      // Optionally, add a marker at SVSU
+      const marker = new google.maps.Marker({
+        position: svsu,
+        map: map,
+
+      });
+
+      const marker2 = new google.maps.Marker({
+          position: swanvalley,
+          map: map,
+          title: 'Swan Valley'
+        });
+      
+
+        const marker3 = new google.maps.Marker({
+          position: sawmillgolfclub,
+          map: map,
+          title: 'Sawmillgolfclub'
+        });
+
+        const marker4 = new google.maps.Marker({
+          position: pleasantview,
+          map: map,
+          title: 'pleasantview'
+        });
+
+
+        const marker5 = new google.maps.Marker({
+          position: twinoaks,
+          map: map,
+          title: 'twinoaks'
+        });
+
+        const marker6 = new google.maps.Marker({
+          position: sandyridge,
+          map: map,
+          title: 'sandyridge'
+        });
+
+
+        const marker7 = new google.maps.Marker({
+          position: currie,
+          map: map,
+          title: 'Currie'
+        });
+
+
+
+
+
+
+
+
+    }
+    
+    window.initMap = initMap;
+    
+      </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer hidden" id="footer">
+    <h3>Cardinal Spots</h3>
+    <h3><a href="https://www.svsu.edu/">SVSU Mainpage</a></h3>
+  </footer>
+  
+  <script>
+    window.addEventListener('scroll', function() {
+        const footer = document.getElementById('footer');
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50) {
+            footer.classList.remove('hidden');
+        } else {
+            footer.classList.add('hidden');
+        }
+    });
+  </script>
+  
+  
+  
+      
+  
+
+
+
+    
+  
+</body>
+
+
+
+
+
+
+
+
+</html>
+
+
+
+

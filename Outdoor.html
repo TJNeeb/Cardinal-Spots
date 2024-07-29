@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="Outdoor.css">
+<header class="header" id="header">
+    <div class="logo">     <a href="site.html"> <img src="SVSULOGO.png"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+       <a href="savedItems.html">      Saved </a>
+        <a href="About me.html">          Profile</a></li>
+      </ul>
+    </nav>
+
+
+
+    
+    
+</script>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw&callback=initMap&v=weekly"
+      defer
+    ></script>
+
+  </header>
+
+
+
+<title>Cardinal Spots - Outdoor Activities</title>
+
+
+
+
+ 
+
+
+
+<div class="photo">
+   
+<img src="Outdoor Experiences Header.png">
+<div class="centeredtext">
+<h1>Outdoor Activities</h1>
+
+</div>
+
+
+<body>
+
+<div class="grid-container">
+    <div class="grid-item">
+        <img src="Dow gardens.jpg">
+        <img src="Dowgardens2.png">
+
+
+        <div class="text">
+            <h1><u>Dow Gardens</u></h1>
+
+        </div>
+
+        <div class="text">
+            <h3>1809 Eastman Ave, Midland, MI 48640</h3>
+            <h3>Size: 110 Acres</h3>
+            <h3>Hours: 9am-8pm, Tuesday - Sundays</h3>
+            <h3>closed Monday</h3>
+            <h3><a href="https://dowgardens.org/">Dow Gardens</a></h3>
+
+
+            <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Tridge.jpg">
+        <img src="Tridge2.jpg">
+
+
+        <div class="text">
+
+            <h1><u>The Tridge</u></h1>
+        </div>
+
+            <div class="text">
+            <h3>Chippewasse Park (Downtown Midland) </h3>
+            <h3><a href="https://cityofmidlandmi.gov/1672/The-Tridge">City of Midland</a></h3>
+
+            <button class="bookmark-btn"></button>
+
+
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="grid-item">
+        <img src="Midlandskatepark.jpg">
+        <img src="Midlandskatepark2.jpg">
+
+
+        <div class="text">
+            <h1><u>Midland Skate Park</u></h1>
+
+        </div>
+
+        <div class="text">
+            <h3>Chippewasse Park (by tridge)</h3>
+            <h3><a href="https://cityofmidlandmi.gov/261/Trilogy-Skate-Park">City of Midland</a></h3>
+
+            <button class="bookmark-btn"></button>
+
+        </div>
+
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Baycityskate.jpg">
+        <img src="baycityskate2.jpg">
+
+
+    <div class="text">
+
+        <h1><u>Bay City Infinity Skate Park
+        </u></h1>
+    </div>
+    <div class="text">
+
+        <h3>413 Marquette Ave, Bay City, MI 48706</h3>
+        <h3><a href="https://www.baycitymi.gov/facilities/facility/details/infinityskatepark-10">Infite Skate Park</a></h3>
+<button class="bookmark-btn"></button>
+
+    </div>
+
+
+
+    </div>
+
+    <div class="grid-item">
+        <img src="Dowdiamond3.png">
+        <img src="Dowdiamond2.jpg">
+
+
+        <div class="text">
+            <h1><u>Dow Diamond</u></h1>
+        </div>
+
+<div class="text">
+    <h3>825 E Main St, Midland, MI 48640</h3>
+    <h3>Capacity: 5,500 baseball; 9,000 stage event
+    </h3>
+    <h3>Team: Great Lakes Loons
+    </h3>
+    <h3></h3>
+    <button class="bookmark-btn"></button>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    /*
+   // Add click event listeners to bookmark buttons
+   document.querySelectorAll('.bookmark-btn').forEach(button => {
+          button.addEventListener('click', function() {
+              this.classList.toggle('bookmarked');
+
+              if (this.classList.contains('bookmarked')) {
+                  // Save the item if bookmarked
+                  saveItem(this.parentElement);
+              } else {
+                  // Unsave the item if unbookmarked
+                  unsaveItem(this.parentElement);
+              }
+          });
+      });
+
+      function saveItem(item) {
+          console.log('Item bookmarked:', item);
+          // Add your saving logic here (e.g., add to local storage)
+      }
+
+      function unsaveItem(item) {
+          console.log('Item unbookmarked:', item);
+          // Add your unsaving logic here (e.g., remove from local storage)
+      }
+      */
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+          const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+
+          document.querySelectorAll('.grid-item').forEach(item => {
+              const button = item.querySelector('.bookmark-btn');
+              const itemId = item.getAttribute('data-id');
+
+              if (savedItems.includes(itemId)) {
+                  button.classList.add('bookmarked');
+              }
+
+              button.addEventListener('click', function() {
+                  this.classList.toggle('bookmarked');
+                  if (this.classList.contains('bookmarked')) {
+                      saveItem(itemId, item);
+                  } else {
+                      unsaveItem(itemId);
+                  }
+              });
+          });
+
+          function saveItem(itemId, item) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              if (!savedItems.includes(itemId)) {
+                  savedItems.push(itemId);
+                  localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                  localStorage.setItem(`savedItem-${itemId}`, item.innerHTML);
+              }
+          }
+
+          function unsaveItem(itemId) {
+              let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+              savedItems = savedItems.filter(id => id !== itemId);
+              localStorage.setItem('savedItems', JSON.stringify(savedItems));
+              localStorage.removeItem(`savedItem-${itemId}`);
+          }
+      });
+</script>
+
+
+
+
+
+
+
+
+
+<div id="map"></div>
+<script src="map2.js"></script>
+
+<!-- prettier-ignore -->
+<script>
+  (function(g) {
+      var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+          await (a = m.createElement("script"));
+          e.set("libraries", [...r] + "");
+          for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+          e.set("callback", c + ".maps." + q);
+          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+          d[q] = f;
+          a.onerror = () => h = n(Error(p + " could not load."));
+          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+          m.head.append(a);
+      }));
+      d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+  })({
+      key: "AIzaSyCpze2T-YQ7BuPtWWavENXVVVyMVWdtMMw",
+      v: "weekly"
+  });
+
+  function initMap() {
+// Saginaw Valley State University coordinates
+const svsu = { lat: 43.5140, lng: -83.9630 };
+
+
+const Dowgardens = {lat: 43.62405141256738, lng: -84.24819736269897}
+
+const Tridge = {lat: 43.61109188828002, lng: -84.25043840882874}
+
+const Mskatepark = {lat: 43.612278951403425, lng: -84.25176154185712}
+
+const Bskatepark = {lat: 43.66695056157347, lng: -83.90538271954681}
+
+const DowDiamond = {lat: 43.609822806432504, lng: -84.23650425715628}
+
+// Create a map centered at SVSU
+const map = new google.maps.Map(document.getElementById("map"), {
+zoom: 11,
+center: svsu,
+});
+
+// Optionally, add a marker at SVSU
+const marker = new google.maps.Marker({
+position: svsu,
+map: map,
+
+});
+
+const marker1 = new google.maps.Marker({
+position: Dowgardens,
+map: map,
+title: 'Dow Gardens'
+});
+
+const marker2 = new google.maps.Marker({
+position: Tridge,
+map: map,
+title: 'The Tridge'
+});
+
+const marker3 = new google.maps.Marker({
+position: Mskatepark,
+map: map,
+title: 'Midland Skatepark'
+});
+
+
+const marker4 = new google.maps.Marker({
+position: Bskatepark,
+map: map,
+title: 'Bay City Skate Park'
+});
+
+const marker5 = new google.maps.Marker({
+position: DowDiamond,
+map: map,
+title: 'Dow Diamond'
+});
+
+
+
+
+
+
+
+
+
+
+}
+
+window.initMap = initMap;
+
+</script>
+
+
+
+
+
+<div class="footer hidden" id="footer">
+    <h3>Cardinal Spots</h3>                 <h3><a href="https://www.svsu.edu/">SVSU Mainpage</a></h3>     
+  
+    
+  
+  
+  
+  </div>
+  
+  <script>
+    window.addEventListener('scroll', function() {
+        const footer = document.getElementById('footer');
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50) {
+            footer.classList.remove('hidden');
+        } else {
+            footer.classList.add('hidden');
+        }
+    });
+  </script>
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
